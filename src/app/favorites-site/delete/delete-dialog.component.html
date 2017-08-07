@@ -1,0 +1,19 @@
+<!--<div>-->
+<!--<h3>Remove favorite-tile website</h3>-->
+<!--This action will remove the favorite-tile website permanently.-->
+<!--<button (click)="websiteDeleted.emit({id: website.id})">Remove website-->
+<!--</button>-->
+<!--<button>Cancel</button>-->
+<!--</div>-->
+
+
+<h2 md-dialog-title>Remove favorite website</h2>
+<md-dialog-content>
+  This action will remove the favorite website permanently.
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-button [md-dialog-close]="true">
+    Remove website
+  </button>
+  <button md-button md-dialog-close>Cancel</button>
+</md-dialog-actions>

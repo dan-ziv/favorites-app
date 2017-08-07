@@ -1,0 +1,9 @@
+<header>
+  <md-toolbar>
+    <span class="small-spacer"><i class="fa fa-star fa-ld" aria-hidden="true"></i></span>
+    <span class="spacer">{{website.name}}</span>
+    <span class="spacer">{{website.url}}</span>
+    <app-edit [website]="website" (websiteEdited)="websiteEdited.emit($event)"></app-edit>
+    <app-delete [website]="website" (websiteDeleted)="websiteDeleted.emit($event)"></app-delete>
+  </md-toolbar>
+</header>

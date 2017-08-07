@@ -1,0 +1,25 @@
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.icon {
+  padding: 0 14px;
+}
+
+.grid {
+  width: 100%;
+}
+
+.small-spacer {
+  flex: 0.2 0.2 auto;
+}
+
+.label{
+  font-size: 12px;
+}

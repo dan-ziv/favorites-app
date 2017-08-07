@@ -1,0 +1,25 @@
+<header>
+  <md-toolbar>
+    <app-al-title [title]="title" [count]="websites.getLogs().length" class="spacer"></app-al-title>
+  </md-toolbar>
+</header>
+
+<br>
+
+<main>
+  <md-grid-list cols="1" rowHeight="10:0.5">
+    <header class="grid">
+      <md-toolbar>
+        <span class="spacer">Date/Time</span>
+        <span class="spacer">Action</span>
+        <span class="spacer">Website name</span>
+        <span class="spacer">URL</span>
+      </md-toolbar>
+    </header>
+    <md-grid-tile *ngFor="let currLog of websites.getLogs()">
+      <app-log-grid class="grid" [log]="currLog"></app-log-grid>
+    </md-grid-tile>
+  </md-grid-list>
+</main>
+
+<footer></footer>

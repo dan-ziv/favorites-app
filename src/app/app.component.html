@@ -1,0 +1,13 @@
+<div class="w3-sidebar w3-bar-block" style="width:10%">
+  <button md-button class="w3-bar-item" (click)="changeScreen('f')">
+    <i class="fa fa-star-o"></i> Favorite sites
+  </button>
+  <button md-button class="w3-bar-item" (click)="changeScreen('l')">
+    <i class="fa fa-angle-double-right "></i> Actions log
+  </button>
+</div>
+
+<div style="margin-left:15%">
+  <app-favorites-site *ngIf="screen === 'f'"></app-favorites-site>
+  <app-log-site *ngIf="screen === 'l'"></app-log-site>
+</div>

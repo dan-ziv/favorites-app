@@ -1,0 +1,13 @@
+<md-card class="favorite-card">
+  <md-card-header>
+    <div md-card-avatar><i class="fa fa-star fa-3x" aria-hidden="true"></i></div>
+    <md-card-title><b>{{website.name}}</b></md-card-title>
+    <md-card-subtitle> {{website.url}}</md-card-subtitle>
+  </md-card-header>
+  <md-card-actions>
+    <div class="button-row">
+      <app-edit [website]="website" (websiteEdited)="websiteEdited.emit($event)"></app-edit>
+      <app-delete [website]="website" (websiteDeleted)="websiteDeleted.emit($event)"></app-delete>
+    </div>
+  </md-card-actions>
+</md-card>

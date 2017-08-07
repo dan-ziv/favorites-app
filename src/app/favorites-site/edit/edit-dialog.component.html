@@ -1,0 +1,16 @@
+<h2 md-dialog-title>Edit website</h2>
+<md-dialog-content>
+  <md-input-container>
+    <input #websiteName mdInput placeholder="Website name" [value]="data.name">
+  </md-input-container>
+  <br>
+  <md-input-container>
+    <input #websiteUrl mdInput placeholder="URL" [value]="data.url">
+  </md-input-container>
+</md-dialog-content>
+<md-dialog-actions>
+  <button md-button md-dialog-close (click)="editData(websiteName.value, websiteUrl.value, data.id)">
+    Save changes
+  </button>
+  <button md-button md-dialog-close>Cancel</button>
+</md-dialog-actions>

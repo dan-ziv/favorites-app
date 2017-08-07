@@ -1,0 +1,29 @@
+<header>
+  <md-toolbar>
+    <app-fs-title [title]="title" [count]="websites.getWebsites().length" class="spacer"></app-fs-title>
+    <input #searchInput type="text" (keyup)="websites.reset()">
+    <a md-button (click)="isGridView=!isGridView"><i [class]="isGridView? 'fa fa-list' : 'fa fa-th'"></i></a>
+    <app-fs-add (websiteAdded)="websites.addWebsite($event)"></app-fs-add>
+  </md-toolbar>
+</header>
+<br>
+<main>
+  <div *ngIf="!isGridView">
+    <md-grid-list cols="4" rowHeight="2:1">
+      <md-grid-tile *ngFor="let currWebsite of websites.getWebsites() | searchfilter : '' : searchInput.value">
+        <app-favorite-tile [website]="currWebsite"
+                           (websiteEdited)="websites.editWebsite($event)"
+                           (websiteDeleted)="websites.deleteWebsite($event)"></app-favorite-tile>
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
+  <div *ngIf="isGridView">
+    <md-grid-list cols="1" rowHeight="10:0.5">
+      <md-grid-tile *ngFor="let currWebsite of websites.getWebsites() | searchfilter : '' : searchInput.value">
+        <app-grid-favorite class="grid" [website]="currWebsite"
+                           (websiteEdited)="websites.editWebsite($event)"
+                           (websiteDeleted)="websites.deleteWebsite($event)"></app-grid-favorite>
+      </md-grid-tile>
+    </md-grid-list>
+  </div>
+</main>
